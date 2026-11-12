@@ -1,3 +1,4 @@
+# NOTE: credentials removed. In a real deployment, read them from environment variables or AWS Secrets Manager.
 Code : # ! pip install psycopg2
 import json
 import psycopg2
@@ -5,18 +6,18 @@ import pymysql
 
 def lambda_handler(event, context):
     # Redshift connection details
-    redshift_host = 'mywrkgrp.143545401680.us-east-1.redshift-serverless.amazonaws.com'
+    redshift_host = '<REDSHIFT_HOST>'
     redshift_port = '5439'
     redshift_db = 'dev'
-    redshift_user = 'admin'
-    redshift_password = 'XXXXX'
+    redshift_user = '<REDSHIFT_USER>'
+    redshift_password = '<REDSHIFT_PASSWORD>'
 
     # RDS MySQL connection details
-    mysql_host = 'myrdsdb.cmonbe2s33w9.us-east-1.rds.amazonaws.com'
+    mysql_host = '<MYSQL_HOST>'
     mysql_port = 3306
     mysql_db = 'IA_FINAL_PROJECT_DB'
-    mysql_user = 'admin'
-    mysql_password = 'Chinna51873'
+    mysql_user = '<MYSQL_USER>'
+    mysql_password = '<MYSQL_PASSWORD>'
 
     try:
         # Connect to Redshift
